@@ -1,0 +1,26 @@
+# Image 1 : hello en c
+FROM scratch
+LABEL author="Mickael, Orsys"
+LABEL since="2025"
+
+COPY hello /opt/
+# COPY hello /opt/hello
+# COPY h* /opt/
+# COPY h?llo /opt/
+# COPY --chmod=005 hello /opt/
+# COPY --chown=1:1 --chmod=500 hello /opt/
+# WORKDIR /opt/
+# COPY hello .
+# ADD hello.tar.gz /opt/
+# ADD --chmod=005 https://gitlab.com/mb_orsys/formation-docker-250818/-/raw/main/hello-c/hello?ref_type=heads&inline=false /opt/
+
+# execute :  /bin/sh -c /opt/hello
+# CMD /opt/hello 
+# execute : /opt/hello
+# CMD ["/opt/hello"]
+# execute : /opt/hello --couleur bleu
+# CMD ["/opt/hello", "--couleur", "bleu"]
+# ENTRYPOINT ["/opt/hello", "--couleur", "bleu"]
+ENTRYPOINT ["/opt/hello"]
+CMD ["--couleur", "bleu"]
+
