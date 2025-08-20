@@ -1,0 +1,27 @@
+FROM openjdk
+
+ARG java_version=11
+ENV USER=Ann
+ENV jv=$java_version
+
+WORKDIR /var/
+
+# RUN apt install -y ...
+# RUN yum install -y ...
+# RUN ftp get ....
+# RUN git clone ....
+# RUN curl ....
+# RUN ["curl", "...."]
+# NON : RUN ls 
+
+# COPY affichage.jar .
+COPY Hello.java .
+
+# CMD javac Hello.java && java Hello
+# RUN javac -source $java_version -target $java_version Hello.java
+# RUN rm -f Hello.java
+
+RUN javac -source $java_version -target $java_version Hello.java && rm -f Hello.java
+
+CMD java Hello
+
