@@ -1,0 +1,4 @@
+# Image 1 : hello en c
+FROM scratch
+LABEL author="Mickael, Orsys"
+LABEL since="2025"
